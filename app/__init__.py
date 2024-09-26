@@ -42,4 +42,7 @@ def create_app(config_name):
     from .api import api as api_blueprint
     app.register_blueprint(api_blueprint, url_prefix='/api/v1')
 
+    from .examples import hello as hello_blueprint
+    app.register_blueprint(hello_blueprint, url_prefix='/greet')
+
     return app
