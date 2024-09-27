@@ -1,6 +1,9 @@
 from flask import Flask, render_template
 
-# from . import hello
+from flask_bootstrap import Bootstrap
+
+app = Flask(__name__)
+Bootstrap(app)
 
 app = Flask(__name__)
 @app.route('/')
@@ -9,4 +12,5 @@ def index():
 
 @app.route('/user/<name>')
 def user(name):
+    print("This printed")
     return render_template('user.html', name=name)
